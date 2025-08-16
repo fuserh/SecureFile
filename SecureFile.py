@@ -41,9 +41,9 @@ class SecureMemory:
             random_data = os.urandom(len(buffer))
             for i in range(len(buffer)):
                 buffer[i] = random_data[i]
-        # 尝试使用ctypes强制清除 [[5]]
+        # 尝试使用ctypes强制清除 
         try:
-            # ctypes.memset 需要正确的地址和大小 [[5]]
+            # ctypes.memset 需要正确的地址和大小 
             ctypes.memset(ctypes.addressof(buffer), 0, len(buffer))
         except Exception:
             pass  # 失败也没关系，我们已经覆盖了数据
